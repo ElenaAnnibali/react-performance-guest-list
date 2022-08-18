@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { Link } from 'react-router-dom';
 
 const headerStyles = css`
   display: flex;
@@ -45,6 +46,12 @@ const rightStyles = css`
   align-items: flex-end;
   margin-right: 30px;
 `;
+const linkStyles = css`
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  z-index: 1;
+`;
 
 export default function Header() {
   return (
@@ -58,9 +65,20 @@ export default function Header() {
         <h2>Brianna O'Koffee</h2>
       </div>
       <div css={rightStyles}>
-        <h4>The project</h4>
         <h4>
-          <a>Guest List</a>
+          <Link css={linkStyles} to="/">
+            Home
+          </Link>
+        </h4>
+        <h4>
+          <Link css={linkStyles} to="/about">
+            The project
+          </Link>
+        </h4>
+        <h4>
+          <Link css={linkStyles} to="/guestList">
+            Guest List
+          </Link>
         </h4>
       </div>
     </header>

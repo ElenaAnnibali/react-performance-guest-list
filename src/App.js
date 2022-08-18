@@ -1,12 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { useEffect, useRef, useState } from 'react';
-import Header from './components/Header';
+import { Link } from 'react-router-dom';
+// import Header from './components/Header';
+import Layout from './components/Layout';
 
 const buttonStyles = css`
   padding: 10px 20px;
   margin-top: 60px;
   margin-left: 50px;
+  height: 60px;
   font-family: 'LackRegular', sans-serif;
   text-transform: uppercase;
   background: rgba(139, 80, 80, 0.61);
@@ -15,6 +18,21 @@ const buttonStyles = css`
   color: #fffbeb;
   font-weight: bold;
   font-size: 18px;
+  box-shadow: #422800 4px 4px 0 0;
+
+  :hover {
+    background-color: rgba(185, 96, 80, 0.61);
+  }
+
+  :active {
+    box-shadow: #422800 2px 2px 0 0;
+    transform: translate(2px, 2px);
+  }
+
+  @media (min-width: 768px) {
+    min-width: 120px;
+    padding: 0 25px;
+  }
 `;
 
 const titleContainerStyle = css`
@@ -186,6 +204,12 @@ const socialStyles = css`
   }
 `;
 
+const linkStyles = css`
+  text-decoration: none;
+  color: #190b11;
+  position: relative;
+`;
+
 function App() {
   // const baseUrl = 'http://localhost:4000';
   const baseUrl = 'https://upleveled-guest-list-api.herokuapp.com';
@@ -247,7 +271,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Layout />
       <img css={backgroundstyles} src="/bg.png" alt="background" />
       <div css={titleContainerStyle}>
         <p className="selector" css={aTitleStyles}>
@@ -336,7 +360,9 @@ function App() {
           </div>
           <p css={paragraphStyles}>
             Curious about who else is coming? Take a look at the{' '}
-            <a>Guest List</a>
+            <Link css={linkStyles} to="/guestList">
+              Guest List
+            </Link>
           </p>
         </div>
         <div css={socialStyles}>
