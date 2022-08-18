@@ -1,0 +1,30 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* @font-face {
+  font-family: 'GulaxRegular';
+  src: local('GulaxRegular'), url(./fonts/Gulax-Regular.otf) format('opentype');
+  font-weight: normal;
+} */
+
+@font-face {
+  font-family: 'LackRegular';
+  src: local('LackRegular'), url(./fonts/Lack-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Format1452';
+  src: local('Format1452'), url(./fonts/Format_1452.otf) format('opentype');
+  font-weight: normal;
+}
